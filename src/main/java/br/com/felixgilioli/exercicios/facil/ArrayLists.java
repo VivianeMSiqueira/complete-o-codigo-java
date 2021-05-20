@@ -1,5 +1,6 @@
 package br.com.felixgilioli.exercicios.facil;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -8,14 +9,20 @@ import java.util.List;
 public class ArrayLists {
 
     private ArrayLists() {}
-
+    
     /**
      * Deve filtrar os elementos de {@param numeros} e retornar apenas os números que são impares.
      * @param numeros lista de inteiros.
      * @return lista de inteiros apenas com números impares.
      */
     public static List<Integer> getImpares(List<Integer> numeros) {
-        return numeros;
+        List<Integer> impares = new ArrayList<>();
+    	for (Integer i: numeros) {
+        	if(i%2 != 0) {
+        		impares.add(i);
+        	}
+		}		
+    	return impares;
     }
 
     /**
@@ -25,6 +32,12 @@ public class ArrayLists {
      * @return quantidade de pessoas.
      */
     public static long getQuantidadeDePessoasQueComecamComALetra(List<String> pessoas, String letra) {
-        return 0;
+        int quant = 0;
+    	for (String string : pessoas) {
+        	if(string.startsWith(letra)) {
+        		quant++;
+        	}
+		}
+    	return quant;
     }
 }

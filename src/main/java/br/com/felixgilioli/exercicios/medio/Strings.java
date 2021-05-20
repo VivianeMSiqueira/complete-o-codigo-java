@@ -13,7 +13,17 @@ public class Strings {
      * @return inteiro informando a quantidade de letras maiúsculas.
      */
     public static int getQuantidadeLetrasMaiusculas(String str) {
-        return 0;
+        int quant = 0;
+    	StringBuilder maiusculas = new StringBuilder(); 
+    	if(str != null) {
+    		for (Character c : str.toCharArray()) {
+    			if(Character.isUpperCase(c)) {
+    				maiusculas.append(c);
+    			}
+    			quant = maiusculas.length();
+    		}
+    	}
+    	return quant;
     }
 
     /**
@@ -22,7 +32,17 @@ public class Strings {
      * @return inteiro informando a quantidade de letras minúsculas.
      */
     public static int getQuantidadeLetrasMinusculas(String str) {
-        return 0;
+    	int quant = 0;
+    	StringBuilder minúsculas = new StringBuilder(); 
+    	if(str != null) {
+    		for (Character c : str.toCharArray()) {
+    			if(Character.isLowerCase(c)) {
+    				minúsculas.append(c);
+    			}
+    			quant = minúsculas.length();
+    		}
+    	}
+    	return quant;
     }
 
     /**
@@ -31,7 +51,17 @@ public class Strings {
      * @return inteiro informando a quantidade de caracteres especiais.
      */
     public static int getQuantidadeCaracteresEspeciais(String str) {
-        return 0;
+    	int quant = 0;
+    	StringBuilder caracteres = new StringBuilder(); 
+    	if(str != null) {
+    		for (Character c : str.toCharArray()) {
+    			if(!Character.isLetterOrDigit(c)) {
+    				caracteres.append(c);
+    			}
+    			quant = caracteres.length();
+    		}
+    	}
+    	return quant;
     }
 
 }

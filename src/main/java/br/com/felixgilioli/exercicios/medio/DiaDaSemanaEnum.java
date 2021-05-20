@@ -24,7 +24,7 @@ public enum DiaDaSemanaEnum {
      * @return descrição do dia da semana.
      */
     public String getDescricao() {
-        return descricao;
+    	return descricao;
     }
 
     /**
@@ -33,7 +33,15 @@ public enum DiaDaSemanaEnum {
      * @return enum.
      */
     public static DiaDaSemanaEnum getEnumPelaDescricao(String descricao) {
-        throw new UnsupportedOperationException();
+    	try {
+			for (DiaDaSemanaEnum dia : DiaDaSemanaEnum.values()) {
+				if(dia.descricao.equalsIgnoreCase(descricao)) {
+					return dia;
+				}
+    		}
+		} catch (Exception e) {
+			throw new UnsupportedOperationException();
+		}
+    	return null;
     }
-
 }

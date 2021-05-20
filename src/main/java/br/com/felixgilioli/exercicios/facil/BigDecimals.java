@@ -18,6 +18,6 @@ public class BigDecimals {
      * @return valor com base no percentual.
      */
     public static BigDecimal getValorComBaseNoPercentual(BigDecimal valor, BigDecimal percentual) {
-        return null;
+       return new BigDecimal(valor.toString()).divide(new BigDecimal("100")).multiply(percentual); 
     }
 }
